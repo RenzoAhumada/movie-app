@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { getFavorites } from '../service/api';
+import { useNavigate } from 'react-router-dom';
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchFavorites = async () => {
@@ -12,8 +14,13 @@ const Favorites = () => {
     fetchFavorites();
   }, []);
 
+  const handleHomeClick =() => {
+    navigate('/')
+  }
+
   return (
     <div>
+    <button onClick={handleHomeClick}>Volver</button>   
       {favorites.length === 0 ? (
         <p>No hay películas favoritas.</p>
       ) : (

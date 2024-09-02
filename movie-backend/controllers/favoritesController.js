@@ -1,32 +1,23 @@
 const Movie = require('../models/movie');
-
+///Controladores de favoritos
 
 const addFavorite = async (req, res) => {
-  const { movieId, title, release_date, poster_path, overview, vote_average } = req.body;
-
   try {
-    let movie = await Movie.findOne({ movieId });
-
-    if (!movie) {
-      movie = new Movie({ movieId, title, release_date, poster_path, overview, vote_average });
-      await movie.save();
-    }
-
+    const movie = new Movie(req.body);
+    await movie.save();
     res.status(201).json(movie);
   } catch (error) {
-    console.error('Error adding favorite:', error.message);
-    res.status(500).json({ error: 'Server error' });
+    res.status(500).json({ message: 'Error al agregar la película a favoritos', error });
   }
 };
 
 
 const getFavorites = async (req, res) => {
   try {
-    const movies = await Movie.find({});
-    res.json(movies);
+    const favorites = await Movie.find({ favorite: true });
+    res.status(200).json(favorites);
   } catch (error) {
-    console.error('Error fetching favorites:', error.message);
-    res.status(500).json({ error: 'Server error' });
+    res.status(500).json({ message: 'Error al obtener las películas favoritas', error });
   }
 };
 

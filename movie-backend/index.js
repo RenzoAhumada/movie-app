@@ -4,6 +4,9 @@ const connectDB = require('./config/db');
 const cors = require('cors'); 
 const favoritesRoutes = require('./routes/favorites');
 
+
+///Llamadas y conexiones de back a front ya que el back se aloja en el puerto 5000
+
 dotenv.config();
 
 const app = express();
