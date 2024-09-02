@@ -5,6 +5,9 @@ import Favorites from './components/favorites'
 import MovieList from './components/MovieList'; 
 import SearchBar from './components/SearchBar'
 
+
+///Llamadas a home para hacer funcionar el front
+
 function App() {
   return (
     <Router>

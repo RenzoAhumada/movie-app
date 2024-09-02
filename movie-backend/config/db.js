@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+
+///Conexion a mongoDB para alojar favoritos
+
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI);
