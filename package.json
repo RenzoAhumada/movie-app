@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:5000",
   "name": "movie-app",
   "private": true,
   "version": "0.0.0",
@@ -13,12 +14,15 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.0.0",
-    "axios": "^1.7.5",
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.6.0",
+    "node-fetch": "^2.7.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
