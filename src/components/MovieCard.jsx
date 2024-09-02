@@ -1,22 +1,13 @@
 import React from 'react';
-import { Card, CardContent, Typography, CardMedia } from '@mui/material';
 
-const MovieCard = ({ movie, onClick }) => {
+const MovieCard = ({ movie }) => {
   return (
-    <Card onClick={() => onClick(movie)}>
-      <CardMedia
-        component="img"
-        height="140"
-        image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-        alt={movie.title}
-      />
-      <CardContent>
-        <Typography variant="h6">{movie.title}</Typography>
-        <Typography variant="body2" color="textSecondary">
-          {movie.release_date}
-        </Typography>
-      </CardContent>
-    </Card>
+    <div className="movie-card">
+      <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
+      <h3>{movie.title}</h3>
+      <p>{movie.release_date}</p>
+      <p>{movie.overview}</p>
+    </div>
   );
 };
 
